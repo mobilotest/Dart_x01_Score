@@ -68,7 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
-            android:text="@string/throws_A"
+            android:text="@string/throws_initial"
             android:textColor="#000000"
             android:textSize="16sp"
             android:textStyle="bold"/>
@@ -84,7 +84,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
-            android:text="@string/throws_B"
+            android:text="@string/throws_initial"
             android:textColor="#000000"
             android:textSize="16sp"
             android:textStyle="bold"/>

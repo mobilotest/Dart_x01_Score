@@ -75,93 +75,156 @@ public class MainActivity<scorePlayerA> extends AppCompatActivity {
      * Subtract the score for Player A.
      */
     public void subtractScoreForPlayerA(View v) {
-        TextView totalAscore = (TextView) findViewById(R.id.player_a_score);
-        String temp1 = totalAscore.getText().toString();
-        int total = 0;
+        TextView totalA_score = (TextView) findViewById(R.id.player_a_score);
+        String temp1 = totalA_score.getText().toString();
+        int total_score = 0;
         if (!"".equals(temp1)){
-            total = Integer.parseInt(temp1);
+            total_score = Integer.parseInt(temp1);
         }
 
-        EditText playerAscore = (EditText) findViewById(R.id.player_a_edit_text);
-        String temp2 = playerAscore.getText().toString();
+        EditText playerA_score = (EditText) findViewById(R.id.player_a_edit_text);
+        String temp2 = playerA_score.getText().toString();
         int value = 0;
         if (!"".equals(temp2)){
             value = Integer.parseInt(temp2);
         }
 
-        TextView leftAthrows = (TextView) findViewById(R.id.throws_leftA);
-        String temp3 = leftAthrows.getText().toString();
+        TextView leftA_throws = (TextView) findViewById(R.id.throws_leftA);
+        String temp3 = leftA_throws.getText().toString();
         int left = 0;
         if (!"".equals(temp3)){
             left = Integer.parseInt(temp3);
         }
-        left -= 3;
 
-        scorePlayerA = total - value;
-        displayForPlayerA(scorePlayerA, left);
+        if(value < total_score) {
+            scorePlayerA = total_score - value;
+            throws_leftA = left - 3;
+            displayForPlayerA(scorePlayerA, throws_leftA);
+        }else if(value > total_score){
+            throws_leftA = left - 3;
+            displayForPlayerA(scorePlayerA, throws_leftA);
+        }else{
+            throws_leftA = left - 3;
+            displayWinnerA(throws_leftA);
+        }
     }
 
     /**
      * Subtract the score for Player B.
      */
     public void subtractScoreForPlayerB(View v) {
-        TextView totalBscore = (TextView) findViewById(R.id.player_b_score);
-        String temp1 = totalBscore.getText().toString();
+        TextView totalB_score = (TextView) findViewById(R.id.player_b_score);
+        String temp1 = totalB_score.getText().toString();
         int total = 0;
         if (!"".equals(temp1)){
             total = Integer.parseInt(temp1);
         }
 
-        EditText playerBscore = (EditText) findViewById(R.id.player_b_edit_text);
-        String temp2 = playerBscore.getText().toString();
+        EditText playerB_score = (EditText) findViewById(R.id.player_b_edit_text);
+        String temp2 = playerB_score.getText().toString();
         int value = 0;
         if (!"".equals(temp2)){
             value = Integer.parseInt(temp2);
         }
 
-        TextView leftBthrows = (TextView) findViewById(R.id.throws_leftB);
-        String temp3 = leftBthrows.getText().toString();
+        TextView leftB_throws = (TextView) findViewById(R.id.throws_leftB);
+        String temp3 = leftB_throws.getText().toString();
         int left = 0;
         if (!"".equals(temp3)){
             left = Integer.parseInt(temp3);
         }
-        left -= 3;
 
-        scorePlayerB = total - value;
-        displayForPlayerB(scorePlayerB, left);
+        if(value < total) {
+            scorePlayerB = total - value;
+            throws_leftB = left - 3;
+            displayForPlayerB(scorePlayerB, throws_leftB);
+        }else if(value > total){
+            throws_leftB = left - 3;
+            displayForPlayerB(scorePlayerB, throws_leftB);
+        }else{
+            throws_leftB = left - 3;
+            displayWinnerB(throws_leftB);
+        }
+    }
+
+    /**
+     * Displays the given score for Teams.
+     *
+     * @param left
+     * @param score
+     */
+    public void displayForPlayerA(int score, int left) {
+        TextView leftViewA = (TextView) findViewById(R.id.throws_leftA);
+        if (left == -3) {
+            Toast.makeText(this, getText(R.string.throws_A), Toast.LENGTH_SHORT).show();
+            return;
+        }else {
+            leftViewA.setText(String.valueOf(left));
+            TextView scoreView = (TextView) findViewById(R.id.player_a_score);
+            scoreView.setText(String.valueOf(score));
+            EditText playerAscore = (EditText) findViewById(R.id.player_a_edit_text);
+            playerAscore.setText(null);
+        }
+    }
+
+    /**
+     * Displays the given score for Teams.
+     *
+     * @param left
+     * @param score
+     */
+    public void displayForPlayerB(int score, int left) {
+        TextView leftViewB = (TextView) findViewById(R.id.throws_leftB);
+        if (left == -3) {
+            Toast.makeText(this, getText(R.string.throws_A), Toast.LENGTH_SHORT).show();
+            return;
+        }else {
+            leftViewB.setText(String.valueOf(left));
+            TextView scoreView = (TextView) findViewById(R.id.player_b_score);
+            scoreView.setText(String.valueOf(score));
+            EditText playerBscore = (EditText) findViewById(R.id.player_b_edit_text);
+            playerBscore.setText(null);
+        }
+    }
+
+    /**
+     * Displays winner A message.
+     *
+     * @param left
+     */
+    public void displayWinnerA(int left) {
+        TextView scoreView = (TextView) findViewById(R.id.player_a_score);
+        scoreView.setText(String.valueOf("WIN!"));
+        EditText playerAscore = (EditText) findViewById(R.id.player_a_edit_text);
+        playerAscore.setText("CONGRATS!");
+        TextView leftViewB = (TextView) findViewById(R.id.throws_leftB);
+        leftViewB.setText(left);
+    }
+
+    /**
+     * Displays winner B message.
+     *
+     * @param left
+     */
+    public void displayWinnerB(int left) {
+        TextView scoreView = (TextView) findViewById(R.id.player_b_score);
+        scoreView.setText(String.valueOf("WIN!"));
+        EditText playerAscore = (EditText) findViewById(R.id.player_b_edit_text);
+        playerAscore.setText("CONGRATS!");
+        TextView leftViewB = (TextView) findViewById(R.id.throws_leftB);
+        leftViewB.setText(left);
     }
 
     /**
      * Resets the score for both teams back to 0.
      */
     public void resetScore(View v) {
+        int quantity = 1;
         scorePlayerA = 101;
         scorePlayerB = 101;
         throws_leftA = 54;
         throws_leftB = 54;
-        displayForPlayerA(scorePlayerA, throws_leftA);
+        displayForPlayerA(scorePlayerA, throws_leftB);
         displayForPlayerB(scorePlayerB, throws_leftB);
-    }
-
-
-    /**
-     * Displays the given score for Teams.
-     */
-    public void displayForPlayerA(int score, int left) {
-        TextView scoreView = (TextView) findViewById(R.id.player_a_score);
-        scoreView.setText(String.valueOf(score));
-        EditText playerAscore = (EditText) findViewById(R.id.player_a_edit_text);
-        playerAscore.setText(null);
-        TextView leftView = (TextView) findViewById(R.id.throws_leftA);
-        leftView.setText(left);
-    }
-
-    public void displayForPlayerB(int score, int left) {
-        TextView scoreView = (TextView) findViewById(R.id.player_b_score);
-        scoreView.setText(String.valueOf(score));
-        EditText playerAscore = (EditText) findViewById(R.id.player_a_edit_text);
-        playerAscore.setText(null);
-        TextView leftView = (TextView) findViewById(R.id.throws_leftB);
-        leftView.setText(left);
     }
 }
