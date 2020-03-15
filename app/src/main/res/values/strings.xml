@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Dart x01</string>
+    <string name="game">Select the game:</string>
+    <string name="throws_quantity">Throws left:</string>
+    <string name="points">Points: </string>
+    <string name="team_a">Player Red</string>
+    <string name="team_b">Player Green</string>
+    <string name="reset">Reset</string>
+    <string name="minus">-</string>
+    <string name="game_choice">X</string>
+    <string name="plus">+</string>
+    <string name="throws_total">54</string>
+    <string name="less_1">You cannot play less than 101 score</string>
+    <string name="more_9">You cannot play more than 901 score</string>
+    <string name="calculate">calculate</string>
+</resources>
