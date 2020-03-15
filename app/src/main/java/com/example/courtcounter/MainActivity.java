@@ -90,7 +90,7 @@ public class MainActivity<scorePlayerA> extends AppCompatActivity {
         }
 
         TextView leftAthrows = (TextView) findViewById(R.id.throws_leftA);
-        String temp3 = totalAscore.getText().toString();
+        String temp3 = leftAthrows.getText().toString();
         int left = 0;
         if (!"".equals(temp3)){
             left = Integer.parseInt(temp3);
@@ -120,7 +120,7 @@ public class MainActivity<scorePlayerA> extends AppCompatActivity {
         }
 
         TextView leftBthrows = (TextView) findViewById(R.id.throws_leftB);
-        String temp3 = totalBscore.getText().toString();
+        String temp3 = leftBthrows.getText().toString();
         int left = 0;
         if (!"".equals(temp3)){
             left = Integer.parseInt(temp3);
