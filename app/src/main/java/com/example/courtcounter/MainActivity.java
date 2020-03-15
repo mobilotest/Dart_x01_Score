@@ -46,6 +46,11 @@ public class MainActivity<scorePlayerA> extends AppCompatActivity {
         TextView gameTextView = (TextView) findViewById(R.id.game_text_view);
         gameTextView.setText("" + quantity);
 
+        EditText playerAscore = (EditText) findViewById(R.id.player_a_edit_text);
+        playerAscore.setText(null);
+        EditText playerBscore = (EditText) findViewById(R.id.player_b_edit_text);
+        playerBscore.setText(null);
+
         TextView playerAtextView = (TextView) findViewById(R.id.player_a_score);
         playerAtextView.setText("" + (quantity * 100 + 1));
         TextView playerBtextView = (TextView) findViewById(R.id.player_b_score);
@@ -63,6 +68,11 @@ public class MainActivity<scorePlayerA> extends AppCompatActivity {
         quantity--;
         TextView gameTextView = (TextView) findViewById(R.id.game_text_view);
         gameTextView.setText("" + quantity);
+
+        EditText playerAscore = (EditText) findViewById(R.id.player_a_edit_text);
+        playerAscore.setText(null);
+        EditText playerBscore = (EditText) findViewById(R.id.player_b_edit_text);
+        playerBscore.setText(null);
 
         TextView playerAtextView = (TextView) findViewById(R.id.player_a_score);
         playerAtextView.setText("" + (quantity * 100 + 1));
@@ -102,7 +112,7 @@ public class MainActivity<scorePlayerA> extends AppCompatActivity {
             displayForPlayerA(scorePlayerA, throws_leftA);
         }else if(value > total_score){
             throws_leftA = left - 3;
-            displayForPlayerA(scorePlayerA, throws_leftA);
+            displayForPlayerA(total_score, throws_leftA);
         }else{
             throws_leftA = left - 3;
             displayWinnerA(throws_leftA);
@@ -115,9 +125,9 @@ public class MainActivity<scorePlayerA> extends AppCompatActivity {
     public void subtractScoreForPlayerB(View v) {
         TextView totalB_score = (TextView) findViewById(R.id.player_b_score);
         String temp1 = totalB_score.getText().toString();
-        int total = 0;
+        int total_score = 0;
         if (!"".equals(temp1)){
-            total = Integer.parseInt(temp1);
+            total_score = Integer.parseInt(temp1);
         }
 
         EditText playerB_score = (EditText) findViewById(R.id.player_b_edit_text);
@@ -134,13 +144,13 @@ public class MainActivity<scorePlayerA> extends AppCompatActivity {
             left = Integer.parseInt(temp3);
         }
 
-        if(value < total) {
-            scorePlayerB = total - value;
+        if(value < total_score) {
+            scorePlayerB = total_score - value;
             throws_leftB = left - 3;
             displayForPlayerB(scorePlayerB, throws_leftB);
-        }else if(value > total){
+        }else if(value > total_score){
             throws_leftB = left - 3;
-            displayForPlayerB(scorePlayerB, throws_leftB);
+            displayForPlayerB(total_score, throws_leftB);
         }else{
             throws_leftB = left - 3;
             displayWinnerB(throws_leftB);
@@ -194,11 +204,11 @@ public class MainActivity<scorePlayerA> extends AppCompatActivity {
      */
     public void displayWinnerA(int left) {
         TextView scoreView = (TextView) findViewById(R.id.player_a_score);
-        scoreView.setText(String.valueOf(getText(R.string.win)));
+        scoreView.setText(getString(R.string.win));
         EditText playerAscore = (EditText) findViewById(R.id.player_a_edit_text);
-        playerAscore.setText(getText(R.string.congrats));
+        playerAscore.setText(getString(R.string.congrats));
         TextView leftViewA = (TextView) findViewById(R.id.throws_leftA);
-        leftViewA.setText(left);
+        leftViewA.setText(String.valueOf(left));
     }
 
     /**
@@ -208,11 +218,11 @@ public class MainActivity<scorePlayerA> extends AppCompatActivity {
      */
     public void displayWinnerB(int left) {
         TextView scoreView = (TextView) findViewById(R.id.player_b_score);
-        scoreView.setText(String.valueOf(getText(R.string.win)));
+        scoreView.setText(getString(R.string.win));
         EditText playerAscore = (EditText) findViewById(R.id.player_b_edit_text);
-        playerAscore.setText(getText(R.string.congrats));
+        playerAscore.setText(getString(R.string.congrats));
         TextView leftViewB = (TextView) findViewById(R.id.throws_leftB);
-        leftViewB.setText(left);
+        leftViewB.setText(String.valueOf(left));
     }
 
     /**
@@ -228,5 +238,9 @@ public class MainActivity<scorePlayerA> extends AppCompatActivity {
         gameTextView.setText("" + quantity);
         displayForPlayerA(scorePlayerA, throws_leftB);
         displayForPlayerB(scorePlayerB, throws_leftB);
+        EditText playerAscore = (EditText) findViewById(R.id.player_a_edit_text);
+        playerAscore.setText(null);
+        EditText playerBscore = (EditText) findViewById(R.id.player_b_edit_text);
+        playerBscore.setText(null);
     }
 }

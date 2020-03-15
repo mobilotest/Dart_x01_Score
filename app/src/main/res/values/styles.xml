@@ -1,17 +1,11 @@
 <resources>
 
-    <color name="white_opaque">#FFFFFFFF</color>
-    <color name="pitch_black">#FF000000</color>
-
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light">
-        <!-- Primary theme color of the app (sets background color of app bar) -->
-        <item name="colorPrimary">#F44336</item>
-        <!-- Background color of buttons in the app -->
-        <item name="colorButtonNormal">#0096A6</item>
-        <item name="android:background">@color/white_opaque</item>
-        <item name="android:windowBackground">@color/pitch_black</item>
-        <item name="android:colorBackground">@color/pitch_black</item>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#000000</item>
+        <item name="colorPrimaryDark">#272727</item>
+        <item name="android:colorButtonNormal">#00796B</item>
     </style>
 
 </resources>

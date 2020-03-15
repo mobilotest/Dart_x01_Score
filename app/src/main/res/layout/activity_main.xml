@@ -10,7 +10,7 @@
     <LinearLayout
         android:id="@+id/game_n_score"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="1dp"
         android:orientation="horizontal">
@@ -185,11 +185,12 @@
                         android:id="@+id/player_a_subtruct"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
                         android:layout_marginBottom="8dp"
                         android:layout_marginLeft="24dp"
                         android:layout_marginRight="24dp"
                         android:onClick="subtractScoreForPlayerA"
-                        android:textColor="@color/white_opaque"
+                        android:textColor="#FFFFFF"
                         android:text="@string/calculate"/>
 
                 </LinearLayout>
@@ -247,11 +248,12 @@
                         android:id="@+id/player_b_subtruct"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
                         android:layout_marginBottom="8dp"
                         android:layout_marginLeft="24dp"
                         android:layout_marginRight="24dp"
                         android:onClick="subtractScoreForPlayerB"
-                        android:textColor="@color/white_opaque"
+                        android:textColor="#FFFFFF"
                         android:text="@string/calculate"/>
 
                 </LinearLayout>
@@ -264,7 +266,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="32dp"
-        android:textColor="@color/white_opaque"
+        android:textColor="#FFFFFF"
         android:onClick="resetScore"
 
         android:text="@string/reset" />
