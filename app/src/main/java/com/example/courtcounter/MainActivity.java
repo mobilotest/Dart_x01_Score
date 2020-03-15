@@ -148,15 +148,15 @@ public class MainActivity<scorePlayerA> extends AppCompatActivity {
     }
 
     /**
-     * Displays the given score for Teams.
+     * Displays the given score for Player A.
      *
-     * @param left
-     * @param score
+     * @param left is the left quantity of darts to throw
+     * @param score is how left scores player should subtract
      */
     public void displayForPlayerA(int score, int left) {
         TextView leftViewA = (TextView) findViewById(R.id.throws_leftA);
         if (left == -3) {
-            Toast.makeText(this, getText(R.string.throws_A), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getText(R.string.throws_done), Toast.LENGTH_SHORT).show();
             return;
         }else {
             leftViewA.setText(String.valueOf(left));
@@ -168,15 +168,15 @@ public class MainActivity<scorePlayerA> extends AppCompatActivity {
     }
 
     /**
-     * Displays the given score for Teams.
+     * Displays the given score for Player B.
      *
-     * @param left
-     * @param score
+     * @param left is the left quantity of darts to throw
+     * @param score is how left scores player should subtract
      */
     public void displayForPlayerB(int score, int left) {
         TextView leftViewB = (TextView) findViewById(R.id.throws_leftB);
         if (left == -3) {
-            Toast.makeText(this, getText(R.string.throws_A), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getText(R.string.throws_done), Toast.LENGTH_SHORT).show();
             return;
         }else {
             leftViewB.setText(String.valueOf(left));
@@ -190,27 +190,27 @@ public class MainActivity<scorePlayerA> extends AppCompatActivity {
     /**
      * Displays winner A message.
      *
-     * @param left
+     * @param left is the left quantity of darts to throw
      */
     public void displayWinnerA(int left) {
         TextView scoreView = (TextView) findViewById(R.id.player_a_score);
-        scoreView.setText(String.valueOf("WIN!"));
+        scoreView.setText(String.valueOf(getText(R.string.win)));
         EditText playerAscore = (EditText) findViewById(R.id.player_a_edit_text);
-        playerAscore.setText("CONGRATS!");
-        TextView leftViewB = (TextView) findViewById(R.id.throws_leftB);
-        leftViewB.setText(left);
+        playerAscore.setText(getText(R.string.congrats));
+        TextView leftViewA = (TextView) findViewById(R.id.throws_leftA);
+        leftViewA.setText(left);
     }
 
     /**
      * Displays winner B message.
      *
-     * @param left
+     * @param left is the left quantity of darts to throw
      */
     public void displayWinnerB(int left) {
         TextView scoreView = (TextView) findViewById(R.id.player_b_score);
-        scoreView.setText(String.valueOf("WIN!"));
+        scoreView.setText(String.valueOf(getText(R.string.win)));
         EditText playerAscore = (EditText) findViewById(R.id.player_b_edit_text);
-        playerAscore.setText("CONGRATS!");
+        playerAscore.setText(getText(R.string.congrats));
         TextView leftViewB = (TextView) findViewById(R.id.throws_leftB);
         leftViewB.setText(left);
     }
@@ -224,6 +224,8 @@ public class MainActivity<scorePlayerA> extends AppCompatActivity {
         scorePlayerB = 101;
         throws_leftA = 54;
         throws_leftB = 54;
+        TextView gameTextView = (TextView) findViewById(R.id.game_text_view);
+        gameTextView.setText("" + quantity);
         displayForPlayerA(scorePlayerA, throws_leftB);
         displayForPlayerB(scorePlayerB, throws_leftB);
     }
