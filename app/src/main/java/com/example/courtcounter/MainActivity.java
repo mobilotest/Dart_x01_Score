@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -80,40 +81,44 @@ public class MainActivity<scorePlayerA> extends AppCompatActivity {
         playerBtextView.setText("" + (quantity * 100 + 1));
     }
 
-
     /**
      * Subtract the score for Player A.
      */
     public void subtractScoreForPlayerA(View v) {
+        int total_score = 0;
         TextView totalA_score = (TextView) findViewById(R.id.player_a_score);
         String temp1 = totalA_score.getText().toString();
-        int total_score = 0;
-        if (!"".equals(temp1)){
-            total_score = Integer.parseInt(temp1);
+        if (temp1.equals(R.string.win)) {
+            Toast.makeText(this, getText(R.string.game_over), Toast.LENGTH_SHORT).show();
+            return;
+        } else {
+            if (!"".equals(temp1)) {
+                total_score = Integer.parseInt(temp1);
+            }
         }
 
         EditText playerA_score = (EditText) findViewById(R.id.player_a_edit_text);
         String temp2 = playerA_score.getText().toString();
         int value = 0;
-        if (!"".equals(temp2)){
+        if (!"".equals(temp2)) {
             value = Integer.parseInt(temp2);
         }
 
         TextView leftA_throws = (TextView) findViewById(R.id.throws_leftA);
         String temp3 = leftA_throws.getText().toString();
         int left = 0;
-        if (!"".equals(temp3)){
+        if (!"".equals(temp3)) {
             left = Integer.parseInt(temp3);
         }
 
-        if(value < total_score) {
+        if (value < total_score) {
             scorePlayerA = total_score - value;
             throws_leftA = left - 3;
             displayForPlayerA(scorePlayerA, throws_leftA);
-        }else if(value > total_score){
+        } else if (value > total_score) {
             throws_leftA = left - 3;
             displayForPlayerA(total_score, throws_leftA);
-        }else{
+        } else {
             throws_leftA = left - 3;
             displayWinnerA(throws_leftA);
         }
@@ -123,35 +128,38 @@ public class MainActivity<scorePlayerA> extends AppCompatActivity {
      * Subtract the score for Player B.
      */
     public void subtractScoreForPlayerB(View v) {
+        int total_score = 0;
         TextView totalB_score = (TextView) findViewById(R.id.player_b_score);
         String temp1 = totalB_score.getText().toString();
-        int total_score = 0;
-        if (!"".equals(temp1)){
+        if ((!"".equals(temp1)) && (!temp1.equals(R.string.win))) {
             total_score = Integer.parseInt(temp1);
+        } else {
+            Toast.makeText(this, getText(R.string.game_over), Toast.LENGTH_SHORT).show();
+            return;
         }
 
         EditText playerB_score = (EditText) findViewById(R.id.player_b_edit_text);
-        String temp2 = playerB_score.getText().toString();
         int value = 0;
-        if (!"".equals(temp2)){
+        String temp2 = playerB_score.getText().toString();
+        if ((!"".equals(temp2)) && (!temp1.equals(R.string.congrats))) {
             value = Integer.parseInt(temp2);
         }
 
         TextView leftB_throws = (TextView) findViewById(R.id.throws_leftB);
-        String temp3 = leftB_throws.getText().toString();
         int left = 0;
-        if (!"".equals(temp3)){
+        String temp3 = leftB_throws.getText().toString();
+        if (!"".equals(temp3)) {
             left = Integer.parseInt(temp3);
         }
 
-        if(value < total_score) {
+        if (value < total_score) {
             scorePlayerB = total_score - value;
             throws_leftB = left - 3;
             displayForPlayerB(scorePlayerB, throws_leftB);
-        }else if(value > total_score){
+        } else if (value > total_score) {
             throws_leftB = left - 3;
             displayForPlayerB(total_score, throws_leftB);
-        }else{
+        } else {
             throws_leftB = left - 3;
             displayWinnerB(throws_leftB);
         }
@@ -160,7 +168,7 @@ public class MainActivity<scorePlayerA> extends AppCompatActivity {
     /**
      * Displays the given score for Player A.
      *
-     * @param left is the left quantity of darts to throw
+     * @param left  is the left quantity of darts to throw
      * @param score is how left scores player should subtract
      */
     public void displayForPlayerA(int score, int left) {
@@ -168,7 +176,7 @@ public class MainActivity<scorePlayerA> extends AppCompatActivity {
         if (left == -3) {
             Toast.makeText(this, getText(R.string.throws_done), Toast.LENGTH_SHORT).show();
             return;
-        }else {
+        } else {
             leftViewA.setText(String.valueOf(left));
             TextView scoreView = (TextView) findViewById(R.id.player_a_score);
             scoreView.setText(String.valueOf(score));
@@ -180,7 +188,7 @@ public class MainActivity<scorePlayerA> extends AppCompatActivity {
     /**
      * Displays the given score for Player B.
      *
-     * @param left is the left quantity of darts to throw
+     * @param left  is the left quantity of darts to throw
      * @param score is how left scores player should subtract
      */
     public void displayForPlayerB(int score, int left) {
@@ -188,7 +196,7 @@ public class MainActivity<scorePlayerA> extends AppCompatActivity {
         if (left == -3) {
             Toast.makeText(this, getText(R.string.throws_done), Toast.LENGTH_SHORT).show();
             return;
-        }else {
+        } else {
             leftViewB.setText(String.valueOf(left));
             TextView scoreView = (TextView) findViewById(R.id.player_b_score);
             scoreView.setText(String.valueOf(score));

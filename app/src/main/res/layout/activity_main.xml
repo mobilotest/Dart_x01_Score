@@ -186,12 +186,25 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
+                        android:layout_marginBottom="4dp"
                         android:layout_marginLeft="24dp"
                         android:layout_marginRight="24dp"
                         android:onClick="subtractScoreForPlayerA"
                         android:textColor="#FFFFFF"
                         android:text="@string/calculate"/>
+
+                    <Button
+                        android:id="@+id/player_a_skip"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginRight="24dp"
+                        android:onClick="subtractScoreForPlayerA"
+                        android:textColor="#FFFFFF"
+                        android:text="@string/skip"
+                        tools:ignore="OnClick" />
 
                 </LinearLayout>
 
@@ -249,12 +262,24 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
+                        android:layout_marginBottom="4dp"
                         android:layout_marginLeft="24dp"
                         android:layout_marginRight="24dp"
                         android:onClick="subtractScoreForPlayerB"
                         android:textColor="#FFFFFF"
                         android:text="@string/calculate"/>
+
+                    <Button
+                        android:id="@+id/player_b_skip"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginRight="24dp"
+                        android:onClick="subtractScoreForPlayerB"
+                        android:textColor="#FFFFFF"
+                        android:text="@string/skip"/>
 
                 </LinearLayout>
 
