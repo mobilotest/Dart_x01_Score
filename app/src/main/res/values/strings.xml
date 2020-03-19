@@ -15,8 +15,11 @@
     <string name="less_1">You cannot play less than 101 score</string>
     <string name="more_9">You cannot play more than 901 score</string>
     <string name="calculate">calculate</string>
-    <string name="skip">Missed</string>
+    <string name="skip">Miss</string>
     <string name="enter_score">Enter Score Here</string>
     <string name="win">WIN!</string>
     <string name="congrats">CONGRATS!</string>
+    <string name="first">1</string>
+    <string name="second">2</string>
+    <string name="third">3</string>
 </resources>
