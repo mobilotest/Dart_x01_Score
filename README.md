@@ -11,7 +11,7 @@ To build this project, I followed along with the practice set and customized the
 Each player starts with a score of 101 or 201 or 501 or 301... whatever you like. And takes turns to throw 3 darts. 
 The score for each turn is calculated and deducted from the players total. Bullseye scores 50, the outer ring scores 25 and a dart in the double or triple ring counts double or triple the segment score.
 
-![Dart x01 Screenshot:](<blockquote class="imgur-embed-pub" lang="en" data-id="a/juJCB5T" data-context="false" ><a href="//imgur.com/a/juJCB5T"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>)
+## Dart x01 Screenshot:
 
 For more details see video in russian:
 301: https://www.youtube.com/watch?v=qJP4BOA4Rw0
