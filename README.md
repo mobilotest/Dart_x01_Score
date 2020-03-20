@@ -22,12 +22,13 @@ A dart in the double or triple ring counts double or triple the segment score.
 3. Tap on the 'CALCULATE' button. You will see the Current score of the Player and how many Throws left (Total throws are limited to 54. It is shown as a decreasing number for each player in the upper right corner).
 4. If the Player wins, you will see Congrats' message. Game is over.
 5. Now you can reset all Scores and Throws for both Players by 'RESET' button.
+
 HAPPY DARTING!
 
 ### Dart x01 Screenshot:
 <img src="https://github.com/mobilotest/Dart_x01_Score/blob/master/images/Screenshot.png" width = 250>
 
 
-### For more details see video in russian:
+### For more details see video in Russian:
 301: https://www.youtube.com/watch?v=qJP4BOA4Rw0
 501: https://www.youtube.com/watch?v=b0tJjHMRIZk
