@@ -25,7 +25,7 @@ A dart in the double or triple ring counts double or triple the segment score.
 HAPPY DARTING!
 
 ### Dart x01 Screenshot:
-<img src="https://github.com/mobilotest/Dart_x01_Score/blob/master/images/Screenshot.jpg" width = 250>
+<img src="https://github.com/mobilotest/Dart_x01_Score/blob/master/images/Screenshot.png" width = 250>
 
 
 ### For more details see video in russian:
