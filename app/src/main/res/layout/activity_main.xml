@@ -106,7 +106,7 @@
             android:layout_weight="1"
             android:text="@string/game_choice"
             android:textAlignment="gravity"
-            android:textColor="#F44336"
+            android:textColor="@color/colorText"
             android:textSize="110sp"
             android:textStyle="bold"
             android:gravity="right"/>
@@ -126,13 +126,14 @@
             android:layout_weight="1"
             android:text="1"
             android:textAlignment="gravity"
-            android:textColor="#F44336"
+            android:textColor="@color/colorText"
             android:textSize="110sp"
             android:textStyle="bold"
             android:gravity="left"/>
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/calculator"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/game_name"
@@ -186,10 +187,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
                         android:orientation="horizontal"
-                        android:ems="10">
+                        android:ems="10" >
 
                         <EditText
-                            android:id="@+id/player_a_edit_text"
+                            android:id="@+id/player_a_edit_text1"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:ems="10"
@@ -197,7 +198,8 @@
                             android:inputType="number"
                             android:textAlignment="center"
                             android:layout_weight="1"
-                            />
+                            android:textColor="@color/colorText"
+                            android:textSize="22sp"/>
 
                         <View
                             android:layout_width="1dp"
@@ -213,7 +215,9 @@
                             android:ems="10"
                             android:hint="@string/second"
                             android:inputType="number"
-                            android:textAlignment="center" />
+                            android:textAlignment="center"
+                            android:textColor="@color/colorText"
+                            android:textSize="22sp"/>
 
                         <View
                             android:layout_width="1dp"
@@ -229,7 +233,9 @@
                             android:ems="10"
                             android:hint="@string/third"
                             android:inputType="number"
-                            android:textAlignment="center" />
+                            android:textAlignment="center"
+                            android:textColor="@color/colorText"
+                            android:textSize="22sp"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -246,7 +252,7 @@
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="2dp"
                             android:layout_marginBottom="2dp"
-                            android:onClick="subtractScoreForPlayerA"
+                            android:onClick="missedScoreForPlayerA1"
                             android:textColor="#FFFFFF"
                             android:text="@string/skip"
                             tools:ignore="OnClick"
@@ -260,7 +266,7 @@
                             android:layout_marginLeft="4dp"
                             android:layout_marginRight="4dp"
                             android:layout_marginBottom="2dp"
-                            android:onClick="subtractScoreForPlayerA"
+                            android:onClick="missedScoreForPlayerA2"
                             android:textColor="#FFFFFF"
                             android:text="@string/skip"
                             tools:ignore="OnClick"
@@ -275,7 +281,7 @@
                             android:layout_marginRight="9dp"
                             android:layout_marginBottom="2dp"
                             android:layout_weight="1"
-                            android:onClick="subtractScoreForPlayerA"
+                            android:onClick="missedScoreForPlayerA3"
                             android:text="@string/skip"
                             android:textColor="#FFFFFF"
                             tools:ignore="OnClick" />
@@ -295,11 +301,13 @@
 
                 </LinearLayout>
 
-                <View
-                    android:layout_width="2dp"
-                    android:layout_height="555dp"
-                    android:layout_marginTop="16dp"
-                    android:background="@android:color/darker_gray" />
+        <View
+            android:layout_width="2dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="16dp"
+            android:outlineAmbientShadowColor="@color/colorText"
+            android:outlineSpotShadowColor="@color/colorText"
+            android:background="@android:color/darker_gray" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -352,7 +360,7 @@
                         android:ems="10">
 
                         <EditText
-                            android:id="@+id/player_b_edit_text"
+                            android:id="@+id/player_b_edit_text1"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:ems="10"
@@ -360,7 +368,8 @@
                             android:inputType="number"
                             android:textAlignment="center"
                             android:layout_weight="1"
-                            />
+                            android:textColor="@color/colorText"
+                            android:textSize="22sp"/>
 
                         <View
                             android:layout_width="1dp"
@@ -376,7 +385,9 @@
                             android:ems="10"
                             android:hint="@string/second"
                             android:inputType="number"
-                            android:textAlignment="center" />
+                            android:textAlignment="center"
+                            android:textColor="@color/colorText"
+                            android:textSize="22sp"/>
 
                         <View
                             android:layout_width="1dp"
@@ -392,7 +403,9 @@
                             android:ems="10"
                             android:hint="@string/third"
                             android:inputType="number"
-                            android:textAlignment="center" />
+                            android:textAlignment="center"
+                            android:textColor="@color/colorText"
+                            android:textSize="22sp"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -409,7 +422,7 @@
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="2dp"
                             android:layout_marginBottom="2dp"
-                            android:onClick="subtractScoreForPlayerB"
+                            android:onClick="missedScoreForPlayerB1"
                             android:textColor="#FFFFFF"
                             android:text="@string/skip"
                             tools:ignore="OnClick"
@@ -423,7 +436,7 @@
                             android:layout_marginLeft="4dp"
                             android:layout_marginRight="4dp"
                             android:layout_marginBottom="2dp"
-                            android:onClick="subtractScoreForPlayerB"
+                            android:onClick="missedScoreForPlayerB2"
                             android:textColor="#FFFFFF"
                             android:text="@string/skip"
                             tools:ignore="OnClick"
@@ -438,7 +451,7 @@
                             android:layout_marginRight="9dp"
                             android:layout_marginBottom="2dp"
                             android:layout_weight="1"
-                            android:onClick="subtractScoreForPlayerB"
+                            android:onClick="missedScoreForPlayerB3"
                             android:text="@string/skip"
                             android:textColor="#FFFFFF"
                             tools:ignore="OnClick" />
@@ -460,15 +473,44 @@
 
     </LinearLayout>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="32dp"
-        android:textColor="#FFFFFF"
-        android:onClick="resetScore"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/calculator"
+        android:layout_marginBottom="30dp"
+        android:orientation="horizontal"
+        android:gravity="center">
 
-        android:text="@string/reset" />
+        <TextView
+            android:id="@+id/arrowRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_marginTop="-30dp"
+            android:textColor="#000000"
+            android:textSize="70sp"
+            android:textAlignment="textEnd"
+            android:textStyle="bold"/>
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="4dp"
+            android:onClick="resetScore"
+            android:text="@string/reset"
+            android:textColor="#FFFFFF"/>
+
+        <TextView
+            android:id="@+id/arrowLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_marginTop="-30dp"
+            android:textColor="#000000"
+            android:textSize="70sp"
+            android:textAlignment="textStart"
+            android:textStyle="bold" />
+    </LinearLayout>
 
 </RelativeLayout>

@@ -12,14 +12,23 @@
     <string name="throws_initial">54</string>
     <string name="throws_done">You can \'t throw anymore</string>
     <string name="game_over">GAME OVER!!!</string>
-    <string name="less_1">You cannot play less than 101 score</string>
-    <string name="more_9">You cannot play more than 901 score</string>
+    <string name="add_value">Please add missed value</string>
+    <string name="switch_b">Player B turn!</string>
+    <string name="switch_a">Player A turn!</string>
+    <string name="less_1">You cannot play less than 101 score game</string>
+    <string name="more_9">You cannot play more than 901 score game</string>
+    <string name="more_60">You cannot get more than 60 score by one throw</string>
+    <string name="more_180">You cannot get more than 180 score</string>
     <string name="calculate">calculate</string>
     <string name="skip">Miss</string>
     <string name="enter_score">Enter Score Here</string>
-    <string name="win">WIN!</string>
-    <string name="congrats">CONGRATS!</string>
-    <string name="first">1</string>
-    <string name="second">2</string>
-    <string name="third">3</string>
+    <string name="win"><font fgcolor='#FFF44336'>WIN!</font></string> <!--red-->
+    <string name="star"><font fgcolor='#FFF44336'>\u2605</font></string> <!--red-->
+    <string name="lose"><font fgcolor='#FF00796B'>LOSE!</font></string> <!--green-->
+    <string name="cross"><font fgcolor='#FF00796B'>X</font></string> <!--green-->
+    <string name="left_arrow"><font fgcolor='#FFF44336'>\u2190</font></string> <!--red-->
+    <string name="right_arrow"><font fgcolor='#FFF44336'>\u2192</font></string> <!--red-->
+    <string name="first">1st</string>
+    <string name="second">2nd</string>
+    <string name="third">3rd</string>
 </resources>
